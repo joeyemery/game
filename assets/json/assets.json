@@ -1,0 +1,13 @@
+[
+	{"location":"assets/sprites/joey.png"},
+	{"location":"assets/sprites/exterior_floor_32.png"},
+	{"location":"assets/sprites/exterior_floor_64.png"},
+	{"location":"assets/sprites/exterior_stairs_64_32.png"},
+	{"location":"assets/sprites/exterior_rails_32.png"},
+	{"location":"assets/sprites/exterior_walls_96_64.png"},
+	{"location":"assets/sprites/exterior_flowers_64.png"},
+	{"location":"assets/sprites/preset_house_1.png"},
+	{"location":"assets/sprites/solid.png"},
+	{"location":"assets/music/home.mp3"},
+	{"location":"assets/music/loading_screen.ogg"}
+]
