@@ -55,7 +55,7 @@ define([
 					bindEvents();
 
 					// Play the intro music!
-					//Music.play('loading_screen', -1, 1);
+					Music.play('loading_screen', -1, 1);
 				});
 			},
 
