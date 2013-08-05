@@ -88,6 +88,8 @@ define([
 		craftySetup();
 	}
 
+	function loadClick(){}
+
 	// The transition from loading screen to game. Inits crafty.
 	function craftySetup() {
 		// Empty the current HTML inside the <body> tag. Also remove the loading
