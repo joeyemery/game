@@ -5,9 +5,15 @@ define([
 	'core/asset_loader',
 	'core/component_loader',
 	'core/save',
+	'player',
 	'music',
-	'sprites'
-], function($, Crafty, Tooltip, AssetLoader, ComponentLoader, Save, Music, Sprites) {
+	'scenes/house_joey_bedroom',
+	'scenes/main_town'
+], function($, Crafty, Tooltip, AssetLoader, ComponentLoader, Save, Player, Music, HouseJoeyBedroomScene, MainTownScene) {
+
+	Crafty.init();
+	Crafty.canvas.init();
+	Crafty.background('#000');
 
 	// Right, this is basically the first function to ever fire.
 	// In here we're gonna start dealing with loading in our assets
@@ -22,6 +28,8 @@ define([
 			smartPlacement: true
 		});
 
+		// Init Crafty and the Crafty.canvas API.
+
 		// Load in all the assets using our AssetLoader class.
 		// .load takes 3 parameters (functions):
 		// (onDone, onSingleDone, onFail)
@@ -30,7 +38,6 @@ define([
 			function(e) {
 				// Now we've loaded all the assets in we should register them.
 				Music.register();
-				Sprites.register();
 
 				// We've loaded all the file assets, now get the components.
 				ComponentLoader.load(function() {
@@ -86,6 +93,9 @@ define([
 
 		// Call the crafty setup function.
 		craftySetup();
+
+		Crafty.scene('house_joey_bedroom');
+
 	}
 
 	function loadClick(){}
@@ -94,11 +104,7 @@ define([
 	function craftySetup() {
 		// Empty the current HTML inside the <body> tag. Also remove the loading
 		// class on body to get rid of the background image.
-		$('body').html('').removeClass('loading');
-
-		// Init Crafty and the Crafty.canvas API.
-		Crafty.init();
-		Crafty.canvas.init();
+		$('body').removeClass('loading').find('.home').remove();
 	}
 
 	return {

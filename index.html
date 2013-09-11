@@ -11,24 +11,29 @@
 		<script data-main="assets/js/bootstrap" src="assets/js/libs/require.js"></script>
 	</head>
 	<body class="loading">
-		<div class="intro_logo">
-			<img src="assets/images/intro_logo.png" />
-		</div>
-		<div class="load_progress">
-			<div class="bar">
-				<span></span>
+		<div class="home">
+			<div class="intro_logo">
+				<img src="assets/images/intro_logo.png" />
+			</div>
+			<div class="load_progress">
+				<div class="bar">
+					<span></span>
+				</div>
+			</div>
+			<div class="play_bar">
+				<ul>
+					<li><a href="#" class="load disabled tooltip" title="No data to load">Play</a></li>
+					<li><a href="#" class="play disabled tooltip" title="Start a new game">Play</a></li>
+					<li><a href="how_to_play.html" target="_blank" class="help tooltip" title="Learn how to play">Help</a></li>
+					<li><a href="#" class="settings tooltip" title="Game settings">Settings</a></li>
+					<li><a href="#" class="settings tooltip" title="Game settings">Settings</a></li>
+					<li><a href="#" class="settings tooltip" title="Game settings">Settings</a></li>
+				</ul>
 			</div>
 		</div>
-		<div class="play_bar">
-			<ul>
-				<li><a href="#" class="load disabled tooltip" title="No data to load">Play</a></li>
-				<li><a href="#" class="play disabled tooltip" title="Start a new game">Play</a></li>
-				<li><a href="how_to_play.html" target="_blank" class="help tooltip" title="Learn how to play">Help</a></li>
-				<li><a href="#" class="settings tooltip" title="Game settings">Settings</a></li>
-				<li><a href="#" class="settings tooltip" title="Game settings">Settings</a></li>
-				<li><a href="#" class="settings tooltip" title="Game settings">Settings</a></li>
-			</ul>
-		</div>
+
+			<div id="cr-stage"></div>
+
 		<script type="text/javascript" src="assets/js/libs/less.js"></script>
 	</body>
 </html>

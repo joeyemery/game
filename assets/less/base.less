@@ -41,9 +41,15 @@ body {
 /*
     Load progress
 */
-body.loading {
+body {
     background:         url('../images/intro_bg.jpg') no-repeat 0 0 transparent;
     background-size:    cover;
+
+    &.loading {
+        #cr-stage {
+            display:    none;
+        }
+    }
 }
 
 .load_progress {
@@ -146,12 +152,22 @@ body.loading {
 }
 
 /* Game Stage */
-#cr-stage {
-    width:  100%;
-    height: 100%;
+#game_stage {
+    display:        block;
+    position:       relative;
+    left:           50%;
+    top:            150px;
+    margin-left:    -207px;
+    width:          414px;
+    height:         352px;
+    background:     url('../images/stage_background.png');
 
-    canvas {
-        width:  100%;
-        height: 100%;
+    #cr-stage {
+        position:   absolute;
+        display:    block;
+        width:      256px;
+        height:     256px;
+        top:        50px;
+        left:       100px;
     }
 }

@@ -10,7 +10,15 @@ define([
 			first_play: true,
 			level: 		1,
 			pos_x: 		0,
-			pos_y: 		0
+			pos_y: 		0,
+			settings: 	{
+				volume: 	1
+			},
+			equips:  	{
+				head:  	false,
+				body: 	'green_sweater',
+				cape: 	false
+			}
 		},
 		
 		// Init function.
@@ -27,6 +35,8 @@ define([
 			this.data.level			= (level = localStorage.getItem('level')) ? level : this.data.level;
 			this.data.pos_x 		= (pos_x = localStorage.getItem('pos_x')) ? pos_x : this.data.pos_x;
 			this.data.pos_y 		= (pos_y = localStorage.getItem('pos_y')) ? pos_y : this.data.pos_y;
+			this.data.settings		= (settings = JSON.parse(localStorage.getItem('settings'))) ? settings : this.data.settings;
+			this.data.equips 		= (equips = JSON.parse(localStorage.getItem('equips'))) ? equips : this.data.equips;
 		},
 
 		save_all: function() {
@@ -38,16 +48,27 @@ define([
 		},
 
 		get: function(identifier) {
-			return this.data[identifier];
+			try {
+				var result = JSON.parse(this.data[identifier]);
+			} catch(e) {
+				var result = this.data[identifier];
+			}
+
+			return result;
 		},
 
 		set: function(identifier, value) {
 			this.data[identifier] = value;
+
+			if(value != null && typeof value === 'object')
+				value = JSON.stringify(value);
+
 			localStorage.setItem(identifier, value);
 		}
 	}
 
 	Save.initialize();
+
 	return Save;
 
 });

@@ -1,0 +1,135 @@
+/* ----------------------------------------------------
+
+	* Filename:		base.less
+
+-----------------------------------------------------*/
+
+/* Imports */
+@import 'reset';
+
+/* Generic */
+body {
+	font-family:	'Lato';
+	font-size:		16px;
+	padding:		50px;
+	background:		#000;
+}
+
+/* Phone */
+.phone {
+	display:			block;
+	width:				435px;
+	height:				810px;
+	margin:				0 auto;
+	background:			url('../images/iphone.png') no-repeat center center transparent;
+	background-size:	cover;
+	position:			relative;
+
+	// Screen
+	.screen {
+		display:	block;
+		position:	absolute;
+		top:		120px;
+		left:		60px;
+		width:		318px;
+		height:		566px;
+		overflow:	hidden;
+	}
+
+	// Content
+	.content {
+		-webkit-transition: all 300ms ease-in-out, opacity 300ms ease;
+		-moz-transition: 	all 300ms ease-in-out, opacity 300ms ease;
+		-ms-transition: 	all 300ms ease-in-out, opacity 300ms ease;
+		-o-transition: 		all 300ms ease-in-out, opacity 300ms ease;
+		transition: 		all 300ms ease-in-out, opacity 300ms ease;
+		background:			url('../images/dribbble.jpg') no-repeat top center transparent;
+		display:			block;
+		height:				100%;
+		background-size:	cover;
+		position:			relative;
+		z-index:			10;
+		-webkit-backface-visibility: hidden;
+
+		&.inactive {
+			-webkit-transform:	translate3d(160px, 0px, 0px) scale(0.5);
+			opacity:			0.6;
+
+			&:hover {
+				opacity: 	1;
+				cursor:		pointer;
+			}
+		}
+
+		// Button
+		.button {
+			display:		block;
+			width:			60px;
+			height:			60px;
+			text-indent:	-999em;
+		}
+	}
+}
+
+/* Menu */
+.menu {
+	display:	none;
+	list-style: none;
+	position:	relative;
+	z-index:	3;
+
+	// Menu open
+	&.open {
+		display:			block;
+		height:				100%;
+		background:			url('../images/menu_bg.jpg') no-repeat center center transparent;
+		background-size:	cover;
+		margin:				0;
+		box-sizing:			border-box;
+		padding:			90px 0 0 60px;
+		position:			absolute;
+		width:				100%;
+		top:				0;
+		z-index:			3;
+	}
+
+	// Navigation menu li
+	li {
+		-webkit-transition: all 400ms ease-in-out, opacity 1000ms ease;
+		-moz-transition: 	all 400ms ease-in-out, opacity 1000ms ease;
+		-ms-transition: 	all 400ms ease-in-out, opacity 1000ms ease;
+		-o-transition: 		all 400ms ease-in-out, opacity 1000ms ease;
+		ransition: 			all 400ms ease-in-out, opacity 1000ms ease;
+		-webkit-transform: 	translate3d(-150px, 0px, 0px) scale(0.2);
+		display:			block;
+		opacity: 			0;
+
+		&.visible {
+			-webkit-transform: translate3d(0px, 0px, 0px) scale(1);
+			opacity: 1;
+		}
+
+		&:hover {
+			-webkit-transform:	none;
+			-webkit-transition:	none;
+			-moz-transition: 	none;
+			-ms-transition: 	none;
+			-o-transition: 		none;
+			transition: 		none;
+		}
+
+		// Anchor within li
+		a {
+			padding:			10px 0;
+			display:			block;
+			color:				#fff;
+			font-size:			20px;
+			text-shadow:		0 2px 2px rgba(0, 0, 0, .3);
+			text-decoration:	none;
+
+			&:hover {
+				color:	#ddd;
+			}
+		}
+	}
+}
